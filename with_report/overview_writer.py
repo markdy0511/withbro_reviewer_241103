@@ -190,9 +190,9 @@ def writer(rounded_overview_df, metric_col):
             descript_raw["GA 전환 성과"] = sentences["GA_구매액"]
             for ga_metric in ga_trans:
                 if ga_metric == "GA_ROAS":
-                    descript_raw["GA 전환 성과"] = descript_raw["GA 전환 성과"] + ", " + sentences[m_metric].replace(m_metric+"은 지난 기간 대비 ", m_metric+"가 ")
+                    descript_raw["GA 전환 성과"] = descript_raw["GA 전환 성과"] + ", " + sentences[ga_metric].replace(ga_metric+"은 지난 기간 대비 ", ga_metric+"가 ")
                 elif ga_metric == "GA_전환율":
-                    descript_raw["GA 전환 성과"] = descript_raw["GA 전환 성과"] + ", " + sentences[m_metric].replace(m_metric+"은 지난 기간 대비 ", m_metric+"이 ")
+                    descript_raw["GA 전환 성과"] = descript_raw["GA 전환 성과"] + ", " + sentences[ga_metric].replace(ga_metric+"은 지난 기간 대비 ", ga_metric+"이 ")
                 else:
                     pass
         elif current_period["구매"] == 0:
