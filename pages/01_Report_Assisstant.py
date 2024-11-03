@@ -132,7 +132,7 @@ if st.session_state.trans_metric_set:
         grouping_period = export_info.get_group_kwr(st.session_state.condition_set["analysis_period"])
     
     if st.session_state.condition_set["commerce_or_not"] == "비커머스":
-        overview, ch_ranking, brnch_ranking, brnch_detail_ranking, cmp_ranking, grp_ranking, kwrd_ranking, history, preview = st.tabs(["오버뷰","매체별 성과","소재구분 분석","소재종류 분석","매체 선택 캠페인 분석", "캠페인 선택 그룹 분석", "성과 상위 소재(키워드) 분석", '운영 히스토리',  '프리뷰'])
+        overview, ch_ranking, brnch_ranking, brnch_detail_ranking, cmp_ranking, grp_ranking, kwrd_ranking, history = st.tabs(["오버뷰","매체별 성과","소재구분 분석","소재종류 분석","매체 선택 캠페인 분석", "캠페인 선택 그룹 분석", "성과 상위 소재(키워드) 분석", '운영 히스토리'])
         with overview:
 
             if st.session_state.overview_result is None:
@@ -682,9 +682,6 @@ if st.session_state.trans_metric_set:
             )
             st.write(now_history)
 
-        with preview:
-            st.write("MMM-EE Coming soon")
-
     else:
         overview, ch_ranking, brnch_ranking, brnch_detail_ranking, cmp_ranking, grp_ranking, kwrd_ranking, history, preview = st.tabs(["오버뷰","매체별 성과","소재구분 분석","소재종류 분석","매체 선택 캠페인 분석", "캠페인 선택 그룹 분석", "성과 상위 소재(키워드) 분석", '운영 히스토리',  '프리뷰'])
         with overview:
@@ -1230,6 +1227,3 @@ if st.session_state.trans_metric_set:
                 st.session_state.period_set["now"]
             )
             st.write(now_history)
-
-        with preview:
-            st.write("MMM-EE Coming soon")
