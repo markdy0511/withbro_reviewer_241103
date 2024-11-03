@@ -72,7 +72,7 @@ def writer(rounded_overview_df, metric_col):
         for col in columns:
             change = "증가" if change_period[col] > 0 else "감소"
             if change_period[col] != 0 and change_period[col] != None and not(pd.isna(change_period[col])):
-                if col in ["총비용", "구매액", "CPC", "CPA", "GA_CPA", "객단가", "GA_객단가"]:
+                if col in ["총비용", "구매액","GA_구매액", "CPC", "CPA", "GA_CPA", "객단가", "GA_객단가"]:
                     sentences[col] = f"{col}은 지난 기간 대비 {abs(change_period[col]):,.0f} 원 {change}하였습니다. ({previous_period[col]:,.0f} 원 -> {current_period[col]:,.0f} 원, {change_rate_period[col]:,.2f} %)"
                 elif col in ["CTR"]:
                     sentences[col] = f"{col}이 지난 기간 대비 {abs(change_period[col]):,.2f} {change}하였습니다. ({previous_period[col]:,.2f} -> {current_period[col]:,.2f}, {change_rate_period[col]:,.2f} %)"
